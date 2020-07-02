@@ -1,9 +1,9 @@
 {
-  "name": "serverless-offline-aws-eventbridge",
+  "name": "@myadbox/serverless-offline-aws-eventbridge",
   "version": "1.2.0",
   "description": "Serverless plugin to run eventbridge offline.",
   "main": "src/index.js",
-  "author": "Ruben Kaiser",
+  "author": "MyAdbox R&D (forked from: Ruben Kaiser)",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
