@@ -114,7 +114,7 @@ class ServerlessOfflineAwsEventbridgePlugin {
     }
 
     if (entry.Detail && subscriber.event.pattern['detail']) {
-      Object.values(subscriber.event.pattern['detail']).forEach((key) => {
+      Object.keys(subscriber.event.pattern['detail']).forEach((key) => {
         subscribedChecks.push(subscriber.event.pattern['detail'][key].includes(entry.Detail[key]))
       }) 
     }
