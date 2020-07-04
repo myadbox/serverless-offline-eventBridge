@@ -38,7 +38,15 @@ class ServerlessOfflineAwsEventbridgePlugin {
               .map(async subscriber => {
                 const handler = this.createHandler(subscriber.functionName, subscriber.function);
                 const event = this.convertEntryToEvent(entry);
-                await handler()(event, {}, Promise.resolve);
+                await handler()(event, {}, (err, success) => {
+                  if (process.env.SLS_DEBUG) {
+                    if (err) {
+                      console.log(`Error:`, err)
+                    } else {
+                      console.log(success)
+                    }
+                  }
+                });
             });
           })
         );
