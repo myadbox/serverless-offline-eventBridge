@@ -39,11 +39,11 @@ class ServerlessOfflineAwsEventbridgePlugin {
                 const handler = this.createHandler(subscriber.functionName, subscriber.function);
                 const event = this.convertEntryToEvent(entry);
                 await handler()(event, {}, (err, success) => {
-                  if (process.env.SLS_DEBUG) {
+                  if (this.debug) {
                     if (err) {
-                      console.log(`Error:`, err)
+                      this.serverless.cli.log(`serverless-offline-aws-eventbridge ::`, `Error:`, err)
                     } else {
-                      console.log(success)
+                      this.serverless.cli.log(`serverless-offline-aws-eventbridge ::`, success)
                     }
                   }
                 });

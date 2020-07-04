@@ -1,9 +1,9 @@
 # serverless-offline-aws-eventbridge
 A serverless offline plugin that enables aws eventBridge events
 
-We forked this to include further support for pattern matching of events. We will check the top level of keys in the event `detail` to match.
-
-Also added support for callback based implementations to avoid events crashing the eventbridge.
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![npm version](https://badge.fury.io/js/serverless-offline-aws-eventbridge.svg)](https://badge.fury.io/js/serverless-offline-aws-eventbridge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Docs
 - [Installation](#installation)
