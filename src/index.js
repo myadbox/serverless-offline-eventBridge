@@ -122,8 +122,9 @@ class ServerlessOfflineAwsEventbridgePlugin {
     }
 
     if (entry.Detail && subscriber.event.pattern['detail']) {
+      const detail = JSON.parse(entry.Detail)
       Object.keys(subscriber.event.pattern['detail']).forEach((key) => {
-        subscribedChecks.push(subscriber.event.pattern['detail'][key].includes(entry.Detail[key]))
+        subscribedChecks.push(subscriber.event.pattern['detail'][key].includes(detail[key]))
       }) 
     }
     
